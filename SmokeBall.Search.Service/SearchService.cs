@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using SmokeBall.Search.Models.Interfaces;
 using SmokeBall.Search.Service.Interfaces;
 
 namespace SmokeBall.Search.Service
@@ -17,10 +22,24 @@ namespace SmokeBall.Search.Service
         public async Task<string> FindRankingsAsync(string searchTerm, string url)
         {
             var result = await _httpWebProxy.ExecuteGoogleSearchAsync(searchTerm, 100);
-
             var searchResults = _htmlParser.GetGoogleSearchResults(result);
 
-            return result;
+            var rankings = FindMatching(searchResults, url);
+            return rankings.Any() 
+                ? string.Join(", ", rankings) : "0";
+        }
+
+        private IList<int> FindMatching(IList<ISearchResult> resultList, string url)
+        {
+            var results = new ConcurrentBag<int>();
+            Parallel.ForEach(resultList, (result) =>
+            {
+                if (result.Url.Contains(url, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    results.Add(result.Position);
+                }
+            });
+            return results.OrderBy(r=>r).ToList();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SmokeBall.Search.Models.Interfaces
+﻿namespace SmokeBall.Search.Models.Interfaces
 {
     public interface ISearchResult
     {
