@@ -10,11 +10,14 @@ namespace SmokeBall.Search.Service
     {
         public IList<ISearchResult> GetGoogleSearchResults(string inputHtml)
         {
+            // with current internet connection, using a web browser, the first pattern will find matches
+            // but when performing a search programmatically, there appears to be a different set of
+            // results being returned, hence the 2nd regex pattern.
             const string findUrlPattern =
                 "(<div\\sstyle=\\\"display:inline-block\\\"\\sclass=\\\"TbwUpd\\\"><cite\\sclass=\\\"iUh30.*?\\\">)(?<url>.*?)(<\\/cite><\\/div>)";
-            const string findUrlAltPattern = "(<div\\sclass=\\\"hJND5c\\\"\\sstyle=\\\"margin-bottom:2px\\\"><cite>)(?<url>.*?)(<\\/cite>)";
+            const string findUrlAltPattern =
+                "(<div\\sclass=\\\"hJND5c\\\"\\sstyle=\\\"margin-bottom:2px\\\"><cite>)(?<url>.*?)(<\\/cite>)";
 
-            //  <div class="hJND5c" style="margin-bottom:2px"><cite>
             var pattern = findUrlPattern;
             var matchingItem = Regex.Match(inputHtml, pattern, RegexOptions.IgnoreCase);
             if (!matchingItem.Success)
@@ -29,7 +32,7 @@ namespace SmokeBall.Search.Service
                 ISearchResult search = new SearchResult
                 {
                     Position = ++position,
-                    Url = matchingItem.Groups["url"].Value.Replace("<b>","").Replace("</b>","").Trim()
+                    Url = matchingItem.Groups["url"].Value.Replace("<b>", "").Replace("</b>", "").Trim()
                 };
                 results.Add(search);
                 matchingItem = matchingItem.NextMatch();

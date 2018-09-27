@@ -23,21 +23,22 @@ namespace SmokeBall.Search.Service
         /// <returns></returns>
         public async Task<string> ExecuteGoogleSearchAsync(string searchTerm, int limit = 100)
         {
-            // check and constrain the search results
             if (limit <= 0 || limit >= 1000)
                 limit = 100;
 
             if (string.IsNullOrWhiteSpace(searchTerm))
                 return string.Empty;
 
-            var url = $"{GoogleUrl}?num={limit}&q={searchTerm}";
+            // using Uri.EscapeDataString to escape without needing to reference System.Web assembly
+            var url = $"{GoogleUrl}?num={limit}&q={Uri.EscapeDataString(searchTerm.Trim())}";
             return await SearchAsync(url);
         }
-        
+
         private async Task<string> SearchAsync(string url)
         {
             var result = await _httpHandler.GetAsync(url);
-            if (!result.IsSuccessStatusCode) throw new Exception(result.ReasonPhrase);
+            if (!result.IsSuccessStatusCode)
+                throw new Exception(result.ReasonPhrase);
 
             var stream = await result.Content.ReadAsStreamAsync();
             using (var readStream = new StreamReader(stream))

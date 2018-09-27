@@ -4,6 +4,6 @@ namespace SmokeBall.Search.Service.Interfaces
 {
     public interface ISearchService
     {
-        Task<string> FindRankingsAsync(string searchTerm, string url);
+        Task<string> FindRankingsAsync(string searchTerm, string url, int limitSearchResults = 100);
     }
 }
