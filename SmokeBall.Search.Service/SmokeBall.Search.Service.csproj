@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmokeBall.Search.Models\SmokeBall.Search.Models.csproj" />
+    <ProjectReference Include="..\SmokeBall.Search.Service.Interfaces\SmokeBall.Search.Service.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

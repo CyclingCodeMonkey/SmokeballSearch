@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeBall.Search.Console", "SmokeBall.Search\SmokeBall.Search.Console.csproj", "{4939C147-F4F0-4D07-98D9-741B72694BC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeBall.Search.Service", "SmokeBall.Search.Service\SmokeBall.Search.Service.csproj", "{17EFD648-7746-498D-96D6-E95F3444561B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeBall.Search.Service.Interfaces", "SmokeBall.Search.Service.Interfaces\SmokeBall.Search.Service.Interfaces.csproj", "{85F9D766-0CF2-4D1B-9622-96ABCB587BC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeBall.Search.Models", "SmokeBall.Search.Models\SmokeBall.Search.Models.csproj", "{B53EA382-6B67-48C3-8D3A-9BDD421D94D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeBall.Search.Models.Interfaces", "SmokeBall.Search.Models.Interfaces\SmokeBall.Search.Models.Interfaces.csproj", "{43EB5BFA-C697-4275-A29F-745CFE94060C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BEEB05E2-28CE-47D1-B998-C02BB876C42E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeBall.Search.Service.UnitTests", "SmokeBall.Search.Service.UnitTests\SmokeBall.Search.Service.UnitTests.csproj", "{7145E6A7-AAE5-4489-943E-A66169E529FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4939C147-F4F0-4D07-98D9-741B72694BC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4939C147-F4F0-4D07-98D9-741B72694BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4939C147-F4F0-4D07-98D9-741B72694BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4939C147-F4F0-4D07-98D9-741B72694BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17EFD648-7746-498D-96D6-E95F3444561B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17EFD648-7746-498D-96D6-E95F3444561B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17EFD648-7746-498D-96D6-E95F3444561B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17EFD648-7746-498D-96D6-E95F3444561B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F9D766-0CF2-4D1B-9622-96ABCB587BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85F9D766-0CF2-4D1B-9622-96ABCB587BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85F9D766-0CF2-4D1B-9622-96ABCB587BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85F9D766-0CF2-4D1B-9622-96ABCB587BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53EA382-6B67-48C3-8D3A-9BDD421D94D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53EA382-6B67-48C3-8D3A-9BDD421D94D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53EA382-6B67-48C3-8D3A-9BDD421D94D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53EA382-6B67-48C3-8D3A-9BDD421D94D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43EB5BFA-C697-4275-A29F-745CFE94060C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EB5BFA-C697-4275-A29F-745CFE94060C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EB5BFA-C697-4275-A29F-745CFE94060C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EB5BFA-C697-4275-A29F-745CFE94060C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7145E6A7-AAE5-4489-943E-A66169E529FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7145E6A7-AAE5-4489-943E-A66169E529FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7145E6A7-AAE5-4489-943E-A66169E529FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7145E6A7-AAE5-4489-943E-A66169E529FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7145E6A7-AAE5-4489-943E-A66169E529FF} = {BEEB05E2-28CE-47D1-B998-C02BB876C42E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8446A679-957E-4A95-B75B-F3785B18F518}
+	EndGlobalSection
+EndGlobal
